@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auth API - Home Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://res.cloudinary.com/kolynz-b/image/upload/v1675866413/eatal/favicon_b8oxo3.png"
+    />
+    <style>
+      body {
+        overflow: hidden;
+        font-family: "Poppins", sans-serif;
+      }
+      .pyramid {
+        position: absolute;
+        right: 50vw;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        transform: translateX(0);
+        border-style: solid;
+        border-width: 0 100vw 100vw * 1.2 100vw;
+        border-color: transparent transparent #e8a653 transparent;
+      }
+
+      .sand {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 9vw;
+        min-height: 8rem;
+        background: #e1c000;
+      }
+
+      .ternary-system {
+        position: absolute;
+        bottom: 0;
+        /* // right:17vw; */
+        left: 82vw;
+        transform: translateX(-100%);
+      }
+
+      .sun {
+        position: relative;
+        border-radius: 50%;
+        background: #fbff00;
+      }
+
+      .sun.primary {
+        position: absolute;
+        top: 15vw;
+        left: 5vw;
+        width: 1rem;
+        height: 1rem;
+      }
+
+      .sun.secondary {
+        position: absolute;
+        top: 5vw;
+        left: 11vw;
+        width: 16vw;
+        max-width: 6rem;
+        height: 16vw;
+        max-height: 6rem;
+      }
+
+      .sun.ternary {
+        right: 0;
+        transform: translateX(10.8rem);
+        width: 80vw;
+        max-width: 800px;
+        height: 80vw;
+        max-height: 800px;
+      }
+
+      .pendulums {
+        position: absolute;
+        width: 50px;
+        height: 200px;
+        right: 35vw;
+        top: -120px;
+        perspective: 400px;
+      }
+
+      .pendulum {
+        position: absolute;
+        width: 50px;
+        height: 200px;
+        right: 44%;
+        top: 0;
+        left: 50%;
+        transform: translateZ(-300px) translateX(-50%);
+      }
+
+      .pendulum.shadow {
+        top: 263%;
+        left: -65%;
+        bottom: 0;
+        transform-origin: 50% 0;
+        transform: translateX(-50%) scaleY(-1) scaleZ(2) rotateY(-30deg)
+          rotateX(-75deg) translateZ(300px);
+      }
+
+      .pendulum .bar {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        display: block;
+        width: 20px;
+        height: 200px;
+        background: #333;
+      }
+
+      .pendulum .string {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 150px;
+        background: #333;
+      }
+
+      .pendulum .weight {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #333;
+      }
+
+      .pendulum .motion {
+        position: absolute;
+        height: 200px;
+        width: 50px;
+        transform-origin: 50% 10px;
+        animation: swing 1600ms infinite ease-in-out;
+      }
+
+      .pendulum.shadow .bar,
+      .pendulum.shadow .string,
+      .pendulum.shadow .weight {
+        background: #3d3a34;
+      }
+
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap");
+      .text {
+        position: absolute;
+        width: auto;
+        right: 18vw;
+        bottom: calc(63vh);
+        transform: translateY(50%);
+        font-size: 2.6rem;
+      }
+
+      .title {
+        text-align: center;
+        font-size: 1em;
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+        text-transform: uppercase;
+        line-height: 1.3em;
+        margin: 0;
+        color: #222;
+      }
+
+      .title strong {
+        display: block;
+        font-weight: 700;
+        font-size: 2em;
+        line-height: 1em;
+      }
+
+      .title em {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.899em;
+        line-height: 1em;
+        letter-spacing: 0.29em;
+        margin-left: 0.25em;
+      }
+
+      p {
+        position: absolute;
+        left: 50%;
+        transform: translateX(3.2em);
+        font-family: "Poppins", sans-serif;
+        font-size: 0.6em;
+        color: #222;
+        margin: 0 17px;
+        padding: 0;
+        text-align: right;
+      }
+
+      @keyframes swing {
+        0% {
+          transform: rotate(-45deg);
+        }
+        50% {
+          transform: rotate(45deg);
+        }
+        100% {
+          transform: rotate(-45deg);
+        }
+      }
+
+      @media only screen and (orientation: portrait) {
+        .text {
+          right: 50%;
+          top: 10%;
+          transform: translateX(50%);
+          font-size: 7vw;
+        }
+        .title {
+          font-size: 1em;
+        }
+      }
+
+      /* btn */
+      .btn-sect {
+        height: 20vh;
+        margin: 0;
+        display: grid;
+        position: absolute;
+        z-index: 10000;
+        /* place-items: center; */
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        /* background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%); */
+      }
+      button {
+        font-size: 20px;
+        cursor: pointer;
+        padding: 0.5em 1em;
+        background: #fff;
+        color: #4a5568;
+        border: 0px solid #a0aec0;
+        margin: 0.1em;
+        transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
+          transform 0.2s ease;
+        box-shadow: 0 0 0 #032c45;
+        transform: translateY(0);
+      }
+      button:first-of-type {
+        border-radius: 0.5em 0 0 0.5em;
+      }
+      button:last-of-type {
+        border-radius: 0 0.5em 0.5em 0;
+      }
+      button i {
+        color: #a0aec0;
+        margin-right: 0.3em;
+        transition: all 0.2s ease-out;
+      }
+      .multi-button:hover button {
+        color: #a0aec0;
+      }
+
+      .multi-button:hover button:hover {
+        background: #f4e009;
+        color: #fff;
+        box-shadow: 0 0 0.8em 0 #ecf813;
+        transform: translateY(-0.2em);
+      }
+      .multi-button:hover button i {
+        color: #cbd5e0;
+      }
+      .multi-button:hover button:hover i {
+        color: #faed29;
+        transform: rotate(-10deg);
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .logo {
+        position: absolute;
+        bottom: 0;
+        left: 20;
+        height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="btn-sect">
+      <div class="multi-button">
+        <button>
+          <a href="{% url 'admin:index' %}"
+            ><i class="fa-solid fa-user-secret"></i> Admin</a
+          >
+        </button>
+        <button>
+          <i class="fas fa-heartbeat"></i><a href="/health"> Health</a>
+        </button>
+        <button>
+          <i class="fas fa-copy"></i
+          ><a href="{% url 'schema-redoc'  %}"> reDocs</a>
+        </button>
+        <button>
+          <a href="{% url 'schema-swagger-ui' %}"
+            ><i class="fas fa-copy"></i> Docs</a
+          >
+        </button>
+        <button>
+          <a href="{% url 'api-root' %}"><i class="fas fa-paste"></i> API</a>
+        </button>
+      </div>
+    </section>
+    <div class="ternary-system">
+      <div class="sun primary"></div>
+      <div class="sun secondary"></div>
+      <div class="sun ternary"></div>
+    </div>
+    <div class="sand">
+      <div class="pendulums">
+        <div class="pendulum">
+          <div class="bar"></div>
+          <div class="motion">
+            <div class="string"></div>
+            <div class="weight"></div>
+          </div>
+        </div>
+        <div class="pendulum shadow">
+          <div class="bar"></div>
+          <div class="motion">
+            <div class="string"></div>
+            <div class="weight"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pyramid"></div>
+    <div class="text">
+      <h1 class="title">Welcome to <strong>Auth-Djsoer</strong><em>API</em></h1>
+      <p>By Kolynzb</p>
+    </div>
+
+    <img
+      class="logo"
+      src="https://res.cloudinary.com/kolynz-b/image/upload/v1675000045/portfolio/me/My_project-1_1_wyesi8.png"
+      alt="logo"
+      style="border-radius: 50"
+    />
+  </body>
+</html>
