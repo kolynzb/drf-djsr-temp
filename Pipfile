@@ -19,6 +19,7 @@ django-cors-headers = "*"
 djangorestframework = "*"
 drf-yasg = "*"
 python-decouple = "*"
+django-redis = "*"
 
 [dev-packages]
 flake8 = "*"
