@@ -5,8 +5,14 @@ name = "pypi"
 
 [packages]
 django = "*"
+black = "*"
+django-debug-toolbar = "*"
 
 [dev-packages]
+flake8 = "*"
+isort = "*"
+pytest-django = "*"
+pytest-watch = "*"
 
 [requires]
 python_version = "3.11"
