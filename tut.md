@@ -281,3 +281,7 @@ https://pypi.org/project/pytest-cov/
 
 - https://docusaurus.io/showcase
 - https://www.gitbook.com/
+
+        <button>
+          <a href="{% url 'api-root' %}"><i class="fas fa-paste"></i> API</a>
+        </button>
