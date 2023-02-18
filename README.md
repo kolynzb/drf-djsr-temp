@@ -1,4 +1,4 @@
-﻿# drf-djsr-temp
+﻿# Django & Djoser API Authetication Starter Template
 
 ![14Um](https://user-images.githubusercontent.com/45392987/219878753-db6aa205-4c12-4940-bf64-2f0cf811118d.gif)
 
@@ -29,9 +29,11 @@
 - [ ] Social (FB + G+) signup/sigin
 - [x] Custom API Home Page
 - [ ] Custom Email Templates
+- [ ] Custom Profile Model
 - [ ] Tests (with mocking and factories) with code-coverage support
 - [x] Swagger API docs out-of-the-box
 - [x] Password reset endpoints
+- [x] Health checks on `/health` route
 
 ## Table Of Contents
 
