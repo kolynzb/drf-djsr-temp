@@ -285,3 +285,5 @@ https://pypi.org/project/pytest-cov/
         <button>
           <a href="{% url 'api-root' %}"><i class="fas fa-paste"></i> API</a>
         </button>
+
+https://www.twilio.com/docs/verify/api/v1/quickstart/phone-verification-django
