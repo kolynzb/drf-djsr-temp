@@ -1,13 +1,10 @@
 ﻿# drf-djsr-temp
- 
-![14Um](https://user-images.githubusercontent.com/45392987/219878753-db6aa205-4c12-4940-bf64-2f0cf811118d.gif){
-   width:150px;
-   align:"center";
-}
+
+![14Um](https://user-images.githubusercontent.com/45392987/219878753-db6aa205-4c12-4940-bf64-2f0cf811118d.gif)
 
 - This is a template for django API authentication with djoser
 
-- __⚠️ Still a Under Contruction__
+- **⚠️ Still a Under Contruction**
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
