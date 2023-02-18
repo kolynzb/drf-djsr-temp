@@ -10,7 +10,8 @@ from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 
 admin.site.site_header = 'AUTH Admin'
-admin.site.index_title = 'Admin'
+admin.site.site_title = "Auth Admin Portal"
+admin.site.index_title = "Welcome to the Auth Portal"
 
 schema_view = get_schema_view(
     openapi.Info(
