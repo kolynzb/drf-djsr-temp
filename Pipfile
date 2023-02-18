@@ -20,6 +20,9 @@ djangorestframework = "*"
 drf-yasg = "*"
 python-decouple = "*"
 django-redis = "*"
+djoser = "*"
+djangorestframework-simplejwt = "*"
+django-filter = "*"
 
 [dev-packages]
 flake8 = "*"

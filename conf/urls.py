@@ -1,5 +1,7 @@
 
 import debug_toolbar
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path, re_path
 from django.views.generic import TemplateView
@@ -35,6 +37,6 @@ urlpatterns = [
     path('api/v1/api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     
     path('api/v1/',include('apps.core.urls')),
-    path('api/v1/accounts',include('apps.accounts.urls')),
+    path('api/v1/accounts',include('accounts.urls')),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
