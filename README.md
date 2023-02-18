@@ -8,7 +8,7 @@
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-- Application Programming interface for a auth built in [django](https://docs.djangoproject.com/) and [djangorestframework](https://www.django-rest-framework.org/) with [python](https://www.python.org/).
+- Application Programming interface for a auth built in [django](https://docs.djangoproject.com/), [Djoser](https://djoser.readthedocs.io/en/latest/base_endpoints.html) and [djangorestframework](https://www.django-rest-framework.org/) with [python](https://www.python.org/).
 
 ![](https://img.shields.io/badge/python-3.11.0-red)
 
