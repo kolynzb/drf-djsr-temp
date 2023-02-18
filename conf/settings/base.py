@@ -176,10 +176,17 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-   'AUTH_HEADER_TYPES': ('JWT',),
-   'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    "AUTH_HEADER_TYPES": (
+        "Bearer",
+        "JWT",
+    ),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "SIGNING_KEY": config("SIGNING_KEY"),
+    "AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
+    "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
 }
+
 
 AUTHENTICATION_BACKENDS = (
     # 'social_core.backends.google.GoogleOAuth2',
@@ -201,12 +208,13 @@ DJOSER = {
     # 'SOCIAL_AUTH_TOKEN_STRATEGY':'djoser.social.token.jwt.TokenStrategy',
     # 'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS':['http://localhost:8000/'],
     'SERIALIZERS': {
-        'user_create':'accounts.serializers.CustomUserCreateSerializer',
-        'user':'accounts.serializers.CustomUserCreateSerializer',
-        'user_delete':'djsoser.serializers.UserDeleteSerializer',
-        'current_user':'accounts.serializers.CustomUserCreateSerializer',
+        "user_create": "accounts.serializers.CreateUserSerializer,",
+        "user": "accounts.serializers.UserSerializer",
+        "current_user": "accounts.serializers.UserSerializer",
+        "user_delete": "djoser.serializers.UserDeleteSerializer",
     }
 }
+
 
 AUTH_USER_MODEL = 'accounts.UserAccount'
 
