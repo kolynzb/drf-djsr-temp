@@ -23,6 +23,8 @@ django-redis = "*"
 djoser = "*"
 djangorestframework-simplejwt = "*"
 django-filter = "*"
+django-phonenumber-field = "*"
+django-countries = "*"
 
 [dev-packages]
 flake8 = "*"
