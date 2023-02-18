@@ -21,13 +21,13 @@ CACHES = {
 
 # Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST = 'smtp.mailtrap.io' 
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = config('EMAIL_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
-
+DEFAULT_FROM_EMAIL = "info@kolynz.com"
+DOMAIN = config('DOMAIN') 
 SITE_NAME = "Auth Trial"
 
 DEBUG_TOOLBAR_CONFIG = {
