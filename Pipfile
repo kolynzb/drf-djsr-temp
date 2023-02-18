@@ -25,6 +25,7 @@ djangorestframework-simplejwt = "*"
 django-filter = "*"
 django-phonenumber-field = "*"
 django-countries = "*"
+django-phonenumbers = "*"
 
 [dev-packages]
 flake8 = "*"
